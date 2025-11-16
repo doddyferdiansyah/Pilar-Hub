@@ -146,3 +146,16 @@ footer {
     padding: 20px;
     color: #999;
 }
+
+/* ---- Gaya untuk Tombol Kembali ---- */
+.back-link {
+    margin-top: 30px; /* Jarak dari konten di atasnya */
+    text-align: center;
+}
+
+.back-link a {
+    color: #0D47A1; /* Warna biru utama kita */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+}
