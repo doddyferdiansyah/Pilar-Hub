@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 5: Simulator Analisis URL - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-5-style.css">
+</head>
+<body>
+    <header>
+        <h1>Modul 5: Simulator Analisis URL</h1>
+        <p>Anda mengklik sebuah link dan mendarat di halaman ini. Coba temukan <strong>2 Tanda Bahaya</strong>!</p>
+        <p id="progress-text">Tanda bahaya ditemukan: 0 dari 2</p>
+    </header>
+
+    <main>
+        <div class="browser-window">
+            
+            <div class="browser-chrome">
+                <div class="browser-buttons">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+                <div class="address-bar">
+                    <span class="lock-icon red-flag" 
+                          data-flag-info="TEPAT! Situs ini 'Tidak Aman' (http://). Situs bank asli PASTI menggunakan https:// (gembok terkunci) untuk mengenkripsi data Anda. Ini tanda bahaya #1!">
+                        ⚠️ Tidak Aman
+                    </span>
+                    <span class="url-text">
+                        http://www.bankpilar.co.id<span class="red-flag" data-flag-info="KEREN, MATA ANDA JELI! Domain aslinya adalah '.xyz' (bagian paling akhir), bukan '.co.id'. Ini adalah trik klasik untuk menipu. Ini adalah tanda bahaya #2!">.xyz</span>/login
+                    </span>
+                </div>
+            </div>
+
+            <div class="browser-content">
+                <h2>Selamat Datang di Bank Pilar</h2>
+                <p>Silakan login untuk melanjutkan.</p>
+                <div class="login-form">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Masukkan username Anda">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Masukkan password Anda">
+                    <button class="login-button" 
+                            onclick="alert('BERHENTI! Jangan pernah memasukkan data di situs yang tidak aman. Anda baru saja menemukan 2 tanda bahaya di URL bar di atas!')">
+                        Login
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">&larr; Kembali ke Dashboard</a>
+        </div>
+    </main>
+
+    <div id="success-modal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2>Luar Biasa!</h2>
+            <p>Anda berhasil menemukan semua 2 Tanda Bahaya di URL bar. Anda sekarang paham cara mendeteksi website palsu. Kerja bagus!</p>
+            <button id="close-modal-btn">Tutup</button>
+        </div>
+    </div>
+
+    <script src="modul-5-script.js"></script>
+</body>
+</html>
