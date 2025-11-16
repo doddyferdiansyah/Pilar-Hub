@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 4: Simulator Wi-Fi - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-4-style.css">
+</head>
+<body>
+    <header>
+        <h1>Modul 4: Simulator Keamanan Wi-Fi</h1>
+        <p>Anda sedang di "Pilar Cafe". Pilih jaringan Wi-Fi untuk terhubung.</p>
+    </header>
+
+    <main>
+        <div class="simulator-container">
+            <div class="wifi-header">
+                <strong>Pengaturan Wi-Fi</strong>
+                <span>Pilih Jaringan...</span>
+            </div>
+
+            <div class="wifi-list">
+                
+                <div class="wifi-item" id="wifi-jebakan">
+                    <span class="wifi-name">Free_Wifi_Starbucks</span>
+                    <span class="wifi-icon">📶</span>
+                </div>
+                
+                <div class="wifi-item" id="wifi-aman">
+                    <span class="wifi-name">KAFE_PILAR_WPA3</span>
+                    <span class="wifi-icon">🔒</span>
+                </div>
+
+                <div class="wifi-item" id="wifi-berisiko">
+                    <span class="wifi-name">PilarCafe_Gratis_Terbuka</span>
+                    <span class="wifi-icon">📶</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">&larr; Kembali ke Dashboard</a>
+        </div>
+    </main>
+
+    <div id="modal-aman" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-aman">
+            <h2>Pilihan Bagus!</h2>
+            <p>Anda terhubung ke <strong>KAFE_PILAR_WPA3</strong>. Ikon <strong>🔒 (Gembok)</strong> menunjukkan jaringan ini dienkripsi (WPA3). Data Anda jauh lebih aman di sini.</p>
+            <button class="modal-button">Mengerti</button>
+        </div>
+    </div>
+
+    <div id="modal-berisiko" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-berisiko">
+            <h2>Hati-hati!</h2>
+            <p>Anda terhubung ke <strong>PilarCafe_Gratis_Terbuka</strong>. Ini adalah jaringan terbuka (tanpa gembok). Siapapun di jaringan yang sama bisa "mengintip" data Anda. Hindari login ke bank atau email!</p>
+            <button class="modal-button">Mengerti</button>
+        </div>
+    </div>
+    
+    <div id="modal-jebakan" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-jebakan">
+            <h2>AWAS JEBAKAN! 🛑</h2>
+            <p>Anda mengklik <strong>Free_Wifi_Starbucks</strong>. Kenapa ada Wi-Fi 'Starbucks' di 'Pilar Cafe'? Ini adalah serangan "Evil Twin". Hacker membuat Wi-Fi palsu ini untuk mencuri password Anda!</p>
+            <button class="modal-button">Mengerti</button>
+        </div>
+    </div>
+
+    <script src="modul-4-script.js"></script>
+</body>
+</html>
