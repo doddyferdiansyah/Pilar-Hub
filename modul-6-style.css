@@ -8,6 +8,7 @@
     --color-aman: #28a745;
     --color-jebakan: #dc3545;
     --color-netral: #6c757d;
+    --phone-frame-color: #222; /* Warna bingkai HP */
 }
 
 body {
@@ -31,26 +32,62 @@ main {
     width: 100%;
     max-width: 400px; /* Lebar HP */
     padding: 20px;
+    
+    /* Kita pusatkan HP-nya */
+    display: flex;
+    justify-content: center;
 }
 
-/* ---- Kontainer HP ---- */
+/* ======== GAYA BINGKAI HP BARU ======== */
+.phone-frame {
+    width: 380px; /* Lebar luar HP */
+    height: 760px; /* Tinggi luar HP */
+    background-color: var(--phone-frame-color);
+    border-radius: 40px; /* Sudut HP yang melengkung */
+    padding: 15px; /* Ini adalah 'bezel' HP */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 15px; /* Pas di padding */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    background-color: var(--phone-frame-color);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 10;
+}
+/* ======== AKHIR GAYA BINGKAI HP ======== */
+
+
+/* ---- Kontainer HP (Lama) -> Sekarang jadi Layar HP ---- */
 .simulator-container {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    /* HAPUS border, box-shadow, dll. */
+    background-color: #ffffff; /* Latar putih HP */
+    border-radius: 25px; /* Sudut dalam layar */
     overflow: hidden;
+    height: 100%; /* Penuhi bingkai */
+    width: 100%;
+    position: relative; /* Agar notch bisa 'di atas' */
 }
 
 .phone-screen {
     position: relative;
-    height: 600px; /* Tinggi HP */
+    height: 100%; /* Tinggi HP */
     background-color: #f5f5f5; /* Wallpaper HP */
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    /* Kita 'potong' padding atas agar pas di bawah notch */
+    padding-top: 40px; 
+    box-sizing: border-box;
 }
 
 /* ---- Logika Layar (Screen) ---- */
@@ -106,6 +143,9 @@ main {
     padding: 25px;
     width: 90%;
     text-align: center;
+    /* Tambahkan ini agar pop-up di atas wallpaper */
+    position: relative; 
+    z-index: 5;
 }
 .app-icon-small {
     font-size: 1.5rem;
