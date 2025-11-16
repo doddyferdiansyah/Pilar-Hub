@@ -1,0 +1,148 @@
+/* Import font profesional */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ---- Variabel Warna (Sesuai Permintaan Anda) ---- */
+:root {
+    --color-blue: #0D47A1;    /* Biru tua profesional */
+    --color-white: #ffffff;   /* Putih bersih */
+    --color-gold: #d4af37;    /* Emas elegan */
+    --color-bg: #f8f9fa;      /* Latar abu-abu sangat muda */
+    --color-text: #333333;    /* Teks abu-abu tua */
+    --color-grey: #bbbbbb;    /* Abu-abu untuk 'coming soon' */
+}
+
+/* ---- Gaya Global ---- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Header (Biru & Putih) ---- */
+header {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid var(--color-gold); /* Aksen Emas */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ---- Konten Utama ---- */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.learning-path h2 {
+    font-size: 1.8rem;
+    color: var(--color-blue);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.path-description {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ---- Grid Modul (Inti Dashboard) ---- */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; /* Jarak antar kartu */
+    margin-top: 20px;
+}
+
+/* ---- Kartu Modul (Putih & Aksen) ---- */
+.module-card {
+    background-color: var(--color-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-decoration: none; /* Menghilangkan garis bawah dari tag <a> */
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-blue);
+}
+
+.module-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.module-card h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--color-blue);
+}
+
+.module-description {
+    flex-grow: 1; /* Mendorong status ke bawah */
+    color: #666;
+}
+
+.module-status {
+    margin-top: 20px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.module-status.active {
+    background-color: var(--color-gold);
+    color: #333;
+}
+
+/* ---- Kartu "Coming Soon" ---- */
+.module-card.coming-soon {
+    background-color: #f9f9f9;
+    color: var(--color-grey);
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.module-card.coming-soon:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: #e0e0e0;
+}
+
+.module-card.coming-soon h3 {
+    color: var(--color-grey);
+}
+
+.module-card.coming-soon .module-status {
+    background-color: #e0e0e0;
+    color: #888;
+}
+
+/* ---- Footer ---- */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #999;
+}
