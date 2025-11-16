@@ -55,7 +55,7 @@ main {
 }
 .score-bar {
     height: 100%;
-    width: 20%; /* Mulai dari 20% */
+    width: 0%; /* Mulai dari 0% */
     background-color: var(--color-jebakan); /* Mulai dari merah */
     border-radius: 10px;
     transition: width 0.5s ease, background-color 0.5s ease;
