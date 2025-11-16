@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Definisikan Skor Awal
-    let currentScore = 20; // 4 pengaturan salah @ 20 poin = 80. (Mulai dari 20/100)
+    let currentScore = 0; // Mulai dari 0. 5 pengaturan x 20 poin = 100.
     
     // 2. Ambil Elemen Skor
     const scoreBar = document.getElementById('score-bar');
