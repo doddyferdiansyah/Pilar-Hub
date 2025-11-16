@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 7: Simulator Jebakan Download - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-7-style.css">
+</head>
+<body>
+    <header>
+        <h1>Modul 7: Simulator Jebakan Download</h1>
+        <p>Tugas Anda: Temukan tombol download yang <strong>ASLI</strong> di antara semua jebakan!</p>
+    </header>
+
+    <main>
+        <div class="simulator-page">
+            <h2>Download "Notepad++ v8.0" Gratis</h2>
+            <p>Software editor teks terbaik, 100% gratis dan aman. Klik di bawah untuk download!</p>
+            
+            <div class="download-box fake">
+                <button id="jebakan-iklan">DOWNLOAD NOW</button>
+                <span>(Versi Terbaru - Dijamin Cepat!)</span>
+            </div>
+            
+            <hr>
+            
+            <div class="download-box real">
+                <h3>Download Asli:</h3>
+                <ul>
+                    <li>
+                        <a href="#" id="tombol-benar">Notepad_v8.0_installer_x64.exe</a> 
+                        (6.5 MB)
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="back-link">
+            <a href="index.html">&larr; Kembali ke Dashboard</a>
+        </div>
+    </main>
+
+    <div id="jebakan-popup" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-jebakan-popup">
+            <button id="popup-close-btn" class="popup-close">&times;</button>
+            <h2>SELAMAT!</h2>
+            <p>Anda pengunjung ke-1.000.000! Klik untuk KLAIM iPhone 15 Anda!</p>
+            <button class="popup-button">KLAIM SEKARANG!</button>
+        </div>
+    </div>
+    
+    <div id="jebakan-cookie" class="cookie-banner">
+        <p>Situs ini menggunakan cookie untuk melacak Anda. 🍪</p>
+        <button id="cookie-accept" class="cookie-button-bad">Terima Semua</button>
+        <button id="cookie-reject" class="cookie-button-good">Tolak</button>
+    </div>
+
+
+    <div id="modal-sukses" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-aman">
+            <h2>KEREN! ANDA BERHASIL! ✅</h2>
+            <p>Anda menemukan link download yang asli! Link yang asli seringkali "membosankan" (berupa teks) dan bukan tombol hijau besar yang mencolok.</p>
+            <button class="modal-button">Mengerti</button>
+        </div>
+    </div>
+
+    <div id="modal-jebakan-popup" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-jebakan">
+            <h2>AWAS JEBAKAN! 🛑</h2>
+            <p>Ini adalah iklan pop-up klasik. Tidak ada iPhone gratis. Satu-satunya tombol aman adalah 'X' untuk menutupnya.</p>
+            <button class="modal-button">Mengerti</button>
+        </div>
+    </div>
+    
+    <div id="modal-jebakan-iklan" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-jebakan">
+            <h2>SALAH TOMBOL! ⛔</h2>
+            <p>Ini adalah tombol iklan! Perhatikan baik-baik. Tombol ini akan meng-install *adware*, bukan software yang Anda inginkan.</p>
+            <button class="modal-button">Mengerti</button>
+        </div>
+    </div>
+    
+    <div id="modal-jebakan-cookie" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-berisiko">
+            <h2>AWAS PRIVASI ANDA! ⚠️</h2>
+            <p>Anda baru saja mengizinkan situs ini melacak semua aktivitas Anda. Selalu cari tombol 'Tolak' atau 'Kustomisasi' untuk melindungi privasi Anda.</p>
+            <button class="modal-button">Mengerti</button>
+        </div>
+    </div>
+
+    <script src="modul-7-script.js"></script>
+</body>
+</html>
