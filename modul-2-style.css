@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ---- Variabel Warna (Konsisten) ---- */
+:root {
+    --color-blue: #0D47A1;
+    --color-gold: #d4af37;
+    --color-lemah: #dc3545;     /* Merah */
+    --color-sedang: #fd7e14;    /* Oranye */
+    --color-lumayan: #ffc107;   /* Kuning */
+    --color-kuat: #28a745;      /* Hijau */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--color-blue);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 { margin: 0; }
+header p { margin: 5px 0 0 0; }
+
+main {
+    width: 100%;
+    max-width: 600px; /* Lebar optimal untuk form */
+    padding: 20px;
+}
+
+.simulator-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 30px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-blue);
+}
+
+.input-container {
+    margin-top: 10px;
+}
+
+#password-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Penting agar padding tidak merusak lebar */
+    transition: border-color 0.2s;
+}
+
+#password-input:focus {
+    border-color: var(--color-blue);
+    outline: none;
+}
+
+.feedback-container {
+    margin-top: 20px;
+}
+
+/* Progress Bar Kekuatan */
+.strength-meter {
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%; /* Default 0% */
+    background-color: var(--color-lemah);
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Kelas untuk warna bar */
+.strength-bar.lemah { background-color: var(--color-lemah); }
+.strength-bar.sedang { background-color: var(--color-sedang); }
+.strength-bar.lumayan { background-color: var(--color-lumayan); }
+.strength-bar.kuat { background-color: var(--color-kuat); }
+
+#feedback-text {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* Kelas untuk warna teks feedback */
+#feedback-text.lemah { color: var(--color-lemah); }
+#feedback-text.sedang { color: var(--color-sedang); }
+#feedback-text.lumayan { color: var(--color-lumayan); }
+#feedback-text.kuat { color: var(--color-kuat); }
+
+#time-to-crack {
+    text-align: center;
+    color: #555;
+    font-style: italic;
+    margin-top: -10px;
+}
+
+/* Checklist Kriteria */
+.criteria-checklist {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.criteria-item {
+    margin-bottom: 5px;
+    opacity: 0.5; /* Default abu-abu */
+    transition: opacity 0.3s;
+}
+/* Saat kriteria terpenuhi */
+.criteria-item.terpenuhi {
+    opacity: 1;
+    color: var(--color-kuat);
+    font-weight: 500;
+}
+
+.criteria-item.terpenuhi::before {
+    content: '✓ '; /* Tanda centang */
+    color: var(--color-kuat);
+    font-weight: 700;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: var(--color-blue);
+    text-decoration: none;
+    font-weight: 700;
+}
