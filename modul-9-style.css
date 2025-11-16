@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ---- Variabel Warna (Konsisten) ---- */
+:root {
+    --color-blue: #0D47A1;
+    --color-bg: #f0f2f5;
+    --color-aman: #28a745;
+    --color-scan: #007bff;
+    --color-jebakan: #dc3545;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--color-blue);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 600px; /* Lebar dashboard AV */
+    padding: 20px;
+}
+
+/* ---- Dashboard Antivirus ---- */
+.antivirus-sim {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-height: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---- Logika Layar (Screen) ---- */
+.screen {
+    display: none; /* Sembunyikan semua */
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.screen.active {
+    display: flex; /* Tampilkan yang aktif */
+}
+
+/* ---- Tampilan Status ---- */
+.status {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.status .icon {
+    font-size: 3rem;
+}
+.status h2 {
+    margin: 10px 0 5px 0;
+}
+.status p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.status-aman h2 { color: var(--color-aman); }
+.status-scan h2 { color: var(--color-scan); }
+.status-bahaya h2 { color: var(--color-jebakan); }
+
+/* ---- Tombol Scan ---- */
+.btn-scan {
+    background-color: var(--color-blue);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.btn-scan:hover {
+    background-color: #0a3a80;
+}
+
+/* ---- Tampilan Scanning ---- */
+.progress-bar-bg {
+    width: 100%;
+    height: 15px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+.progress-bar {
+    width: 0%; /* Mulai dari 0% */
+    height: 100%;
+    background-color: var(--color-scan);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+#scan-log {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* ---- Tampilan Daftar Ancaman ---- */
+.threat-list {
+    width: 100%;
+    margin: 15px 0;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+.threat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+.threat-item:last-child { border-bottom: none; }
+.threat-info strong {
+    display: block;
+    font-size: 1.1rem;
+}
+.level { font-size: 0.9rem; }
+.level-low { color: #ffc107; }
+.level-critical { color: var(--color-jebakan); font-weight: 700; }
+
+.threat-item select {
+    padding: 8px;
+    font-size: 0.9rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+.threat-item select:focus {
+    border-color: var(--color-jebakan);
+    outline: none;
+}
+
+.btn-finish {
+    background-color: var(--color-jebakan);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* ---- Tombol Kembali ---- */
+.back-link { margin-top: 20px; text-align: center; }
+.back-link a { color: var(--color-blue); text-decoration: none; font-weight: 700; }
+
+/* ---- Modal Feedback (Copy-paste) ---- */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.modal-content {
+    background-color: white; padding: 30px; border-radius: 8px;
+    text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 400px;
+    border-top: 5px solid;
+}
+.modal-aman { border-color: var(--color-aman); }
+.modal-aman h2 { color: var(--color-aman); }
+.modal-jebakan { border-color: var(--color-jebakan); }
+.modal-jebakan h2 { color: var(--color-jebakan); }
+.modal-content h2 { margin-top: 0; }
+.modal-button {
+    background-color: var(--color-blue); color: white;
+    padding: 10px 20px; border: none; border-radius: 5px;
+    cursor: pointer; font-size: 1rem; margin-top: 10px;
+    text-decoration: none;
+}
