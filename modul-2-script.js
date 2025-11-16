@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkNumber = document.getElementById('check-number');
     const checkSymbol = document.getElementById('check-symbol');
 
+    // Ambil elemen modal
+    const successModal = document.getElementById('success-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    
+    // Status untuk melacak apakah modal sudah muncul
+    let modalShown = false;
+    
     // 'Listener' ini berjalan SETIAP KALI pengguna mengetik
     passwordInput.addEventListener('input', () => {
         const password = passwordInput.value;
@@ -30,6 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Update Checklist
         updateChecklist(result.criteria);
+
+        // Cek jika password SANGAT KUAT (skor 5) dan modal BELUM muncul
+        if (result.score === 5 && !modalShown) {
+            successModal.style.display = 'flex'; // Tampilkan modal
+            modalShown = true; // Set status jadi sudah muncul
+        }
+        
+        // Reset status jika password diedit dan jadi tidak kuat lagi
+        if (result.score < 5) {
+            modalShown = false;
+        }
     });
 
     function checkPasswordStrength(password) {
@@ -116,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
              timeToCrack = '---';
         }
 
-        return { width, colorClass, feedback, timeToCrack, criteria };
+        return { width, colorClass, feedback, timeToCrack, criteria, score };
     }
     
     function updateChecklist(criteria) {
@@ -148,4 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
             checkSymbol.classList.remove('terpenuhi');
         }
     }
+    // Logika untuk menutup modal
+    closeModalBtn.addEventListener('click', () => {
+        successModal.style.display = 'none';
+    });
 });
