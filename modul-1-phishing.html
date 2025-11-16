@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 1: Simulator Phishing - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-1-style.css">
+</head>
+<body>
+    <header>
+        <h1>Modul 1: Simulator Email Phishing</h1>
+        <p>Bisakah Anda menemukan semua <strong>4 Tanda Bahaya</strong> di email palsu di bawah ini?</p>
+        <p id="progress-text">Tanda bahaya ditemukan: 0 dari 4</p>
+    </header>
+
+    <main>
+        <div class="email-simulator">
+            <div class="email-header">
+                <p><strong>Dari:</strong> 
+                    <span class="red-flag" data-flag-info="SALAH! Pengirimnya adalah 'security@facebook-support.com'. Alamat resmi Facebook tidak menggunakan '-support.com'. Ini adalah tanda bahaya #1.">Facebook &lt;security@facebook-support.com&gt;</span>
+                </p>
+                <p><strong>Kepada:</strong> 
+                    <span>user@email-anda.com</span>
+                </p>
+                <p><strong>Subjek:</strong> 
+                    <span class="red-flag" data-flag-info="BENAR! Tata bahasa yang buruk seperti 'Peringatan Akun Mendesak Anda' (bukan 'Mendesak untuk Akun Anda') adalah tanda bahaya #2.">Peringatan Akun Mendesak Anda</span>
+                </p>
+            </div>
+
+            <div class="email-body">
+                <p>
+                    <span class="red-flag" data-flag-info="TEPAT! Sapaan yang umum seperti 'Pengguna yang Terhormat' (bukan nama asli Anda) adalah tanda bahaya #3.">Pengguna yang Terhormat,</span>
+                </p>
+                <p>Kami mendeteksi ada aktivitas tidak biasa di akun Facebook Anda dari lokasi yang tidak kami kenali. Untuk keamanan, kami telah mengunci akun Anda sementara.</p>
+                <p>Silakan verifikasi identitas Anda segera untuk membuka kunci akun Anda dengan mengklik tombol di bawah ini:</p>
+                
+                <div class="button-container">
+                    <a href="#" class="email-button red-flag" 
+                       data-flag-info="KEREN! Anda mengecek link-nya. Jika Anda 'hover' (atau lihat di pojok kiri bawah), link ini tidak mengarah ke 'facebook.com', tapi ke 'http://fb-login-scam.xyz'. Ini adalah tanda bahaya #4!"
+                       onclick="return false;">Verifikasi Akun Anda Sekarang</a>
+                </div>
+
+                <p>Terima kasih,<br>Tim Keamanan Facebook</p>
+            </div>
+        </div>
+
+        <div id="success-modal" class="modal-backdrop" style="display: none;">
+            <div class="modal-content">
+                <h2>KEREN!</h2>
+                <p>Anda berhasil menemukan semua 4 Tanda Bahaya! Anda telah lulus Modul 1 dan sekarang lebih aman dari serangan phishing. Bagus sekali!</p>
+                <button id="close-modal-btn">Tutup</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
