@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         this.classList.add('setting-good');
         
         // Update Warna Skor
+        if (currentScore > 0) { // Beri warna merah jika > 0, tapi masih < 40
+            scoreBar.style.backgroundColor = '#dc3545';
+            scoreText.style.color = '#dc3545';
+        }
         if (currentScore > 40) {
             scoreBar.style.backgroundColor = '#ffc107'; // Kuning
             scoreText.style.color = '#ffc107';
