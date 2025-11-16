@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 8: Simulator Audit Privasi - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-8-style.css">
+</head>
+<body>
+    <header>
+        <h1>Modul 8: Simulator Audit Privasi</h1>
+        <p>Pengaturan "PilarBook" Anda berisiko! Ubah 5 pengaturan di bawah ini untuk mengamankan akun Anda.</p>
+    </header>
+
+    <main>
+        <div class="score-container">
+            <strong>Skor Privasi Anda:</strong>
+            <div class="score-bar-bg">
+                <div id="score-bar" class="score-bar"></div>
+            </div>
+            <span id="score-text">20/100 (Berisiko!)</span>
+        </div>
+
+        <div class="settings-page">
+            
+            <div class="setting-item" id="setting-post">
+                <div class="setting-info">
+                    <h4>Siapa yang bisa melihat postingan Anda?</h4>
+                    <p>Mengatur siapa yang bisa melihat postingan Anda selanjutnya.</p>
+                </div>
+                <div class="setting-control">
+                    <select id="select-post" class="setting-bad">
+                        <option value="publik">Publik 🌍</option>
+                        <option value="teman">Hanya Teman 👥</option>
+                        <option value="saya">Hanya Saya 🔒</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="setting-item" id="setting-friends">
+                <div class="setting-info">
+                    <h4>Siapa yang bisa melihat daftar teman Anda?</h4>
+                    <p>Penipu bisa menggunakan ini untuk menargetkan teman Anda.</p>
+                </div>
+                <div class="setting-control">
+                    <select id="select-friends" class="setting-bad">
+                        <option value="publik">Publik 🌍</option>
+                        <option value="teman">Hanya Teman 👥</option>
+                        <option value="saya">Hanya Saya 🔒</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="setting-item" id="setting-search">
+                <div class="setting-info">
+                    <h4>Izinkan mesin pencari (Google) menautkan ke profil Anda?</h4>
+                    <p>Mematikan ini membuat profil Anda lebih sulit ditemukan.</p>
+                </div>
+                <div class="setting-control">
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-search" class="setting-bad" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="setting-item" id="setting-tag">
+                <div class="setting-info">
+                    <h4>Aktifkan 'Tinjau Tanda' (Tag Review)?</h4>
+                    <p>Setujui secara manual sebelum tanda (tag) muncul di profil Anda.</p>
+                </div>
+                <div class="setting-control">
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-tag" class="setting-bad">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="setting-item" id="setting-2fa">
+                <div class="setting-info">
+                    <h4>Otentikasi Dua Faktor (2FA)</h4>
+                    <p>Perlindungan terkuat untuk akun Anda (wajib!).</p>
+                </div>
+                <div class="setting-control">
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-2fa" class="setting-bad">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">&larr; Kembali ke Dashboard</a>
+        </div>
+    </main>
+
+    <div id="success-modal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2>SELAMAT! SKOR 100/100!</h2>
+            <p>Akun "PilarBook" Anda sekarang terkunci rapat! Anda telah berhasil mengamankan 5 pengaturan privasi paling kritis. Terapkan ini di akun media sosial Anda yang asli!</p>
+            <button id="close-modal-btn" class="modal-button">Kembali ke Dashboard</button>
+        </div>
+    </div>
+
+    <script src="modul-8-script.js"></script>
+</body>
+</html>
