@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ---- Variabel Warna (Konsisten) ---- */
+:root {
+    --color-blue: #0D47A1;
+    --color-bg: #f0f2f5;
+    --color-aman: #28a745;
+    --color-berisiko: #ffc107;
+    --color-jebakan: #dc3545;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--color-blue);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 800px; /* Lebar halaman web */
+    padding: 20px;
+}
+
+/* ---- Halaman Web Palsu ---- */
+.simulator-page {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 30px;
+}
+.simulator-page h2 {
+    color: var(--color-blue);
+    text-align: center;
+}
+.download-box {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* ---- JEBAKAN B: Tombol Iklan Hijau ---- */
+.download-box.fake {
+    background-color: #f1fff0;
+    border: 2px dashed #ccc;
+}
+#jebakan-iklan {
+    background-color: var(--color-aman); /* Warna hijau menipu */
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    /* Animasi agar mencolok */
+    animation: pulse 1s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+.download-box.fake span {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+    font-style: italic;
+}
+
+/* ---- TOMBOL BENAR: Link Teks ---- */
+.download-box.real {
+    text-align: left;
+    background-color: #f9f9f9;
+}
+.download-box.real ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#tombol-benar {
+    color: #007bff; /* Warna link biru standar */
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+#tombol-benar:hover {
+    color: #0056b3;
+}
+
+/* ---- JEBAKAN A: Pop-up Iklan ---- */
+.modal-jebakan-popup {
+    background-color: #fff;
+    border: 5px solid var(--color-jebakan);
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+}
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.popup-button {
+    background-color: var(--color-gold);
+    color: #333;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+/* ---- JEBAKAN C: Cookie Banner ---- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    z-index: 99;
+}
+.cookie-banner p {
+    margin: 0 20px 0 0;
+}
+.cookie-button-bad, .cookie-button-good {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    margin: 0 5px;
+}
+.cookie-button-bad { /* Jebakan 'Accept All' */
+    background-color: var(--color-blue);
+    color: white;
+}
+.cookie-button-good { /* Pilihan 'Tolak' yang benar */
+    background-color: #777;
+    color: #fff;
+}
+
+
+/* ---- Tombol Kembali ---- */
+.back-link { margin-top: 20px; text-align: center; }
+.back-link a { color: var(--color-blue); text-decoration: none; font-weight: 700; }
+
+/* ---- Modal Feedback (Copy-paste) ---- */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.modal-content {
+    background-color: white; padding: 30px; border-radius: 8px;
+    text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 400px;
+    border-top: 5px solid;
+}
+.modal-aman { border-color: var(--color-aman); }
+.modal-aman h2 { color: var(--color-aman); }
+.modal-berisiko { border-color: var(--color-berisiko); }
+.modal-berisiko h2 { color: var(--color-berisiko); }
+.modal-jebakan { border-color: var(--color-jebakan); }
+.modal-jebakan h2 { color: var(--color-jebakan); }
+.modal-content h2 { margin-top: 0; }
+.modal-button {
+    background-color: var(--color-blue); color: white;
+    padding: 10px 20px; border: none; border-radius: 5px;
+    cursor: pointer; font-size: 1rem; margin-top: 10px;
+}
