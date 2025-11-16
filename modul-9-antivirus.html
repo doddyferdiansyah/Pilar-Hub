@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Modul 9: Simulator Antivirus - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-9-style.css">
+</head>
+<body>
+    <header>
+        <h1>Modul 9: Simulator Antivirus</h1>
+        <p>Komputer Anda terasa lambat dan aneh. Jalankan scan untuk memeriksa!</p>
+    </header>
+
+    <main>
+        <div class="antivirus-sim">
+            
+            <div id="screen-start" class="screen active">
+                <div class="status status-aman">
+                    <span class="icon">✅</span>
+                    <h2>Sistem Aman</h2>
+                    <p>Terakhir scan: 30 hari lalu. Disarankan untuk scan sekarang.</p>
+                </div>
+                <button id="btn-scan" class="btn-scan">Scan Cepat Sekarang</button>
+            </div>
+            
+            <div id="screen-scan" class="screen">
+                <div class="status status-scan">
+                    <span class="icon">🔍</span>
+                    <h2>Scanning...</h2>
+                    <div class="progress-bar-bg">
+                        <div id="scan-progress-bar" class="progress-bar"></div>
+                    </div>
+                    <p id="scan-log">Memulai scan...</p>
+                </div>
+            </div>
+            
+            <div id="screen-threats" class="screen">
+                <div class="status status-bahaya">
+                    <span class="icon">🛑</span>
+                    <h2>ANCAMAN DITEMUKAN!</h2>
+                    <p>3 ancaman terdeteksi. Silakan pilih tindakan di bawah ini.</p>
+                </div>
+                <div class="threat-list">
+                    <div class="threat-item">
+                        <div class="threat-info">
+                            <strong>Adware.Popupper</strong>
+                            <span class="level level-low">Level: Rendah</span>
+                        </div>
+                        <select id="action-1">
+                            <option value="ignore">Abaikan</option>
+                            <option value="quarantine">Karantina</option>
+                            <option value="remove">Hapus</option>
+                        </select>
+                    </div>
+                    <div class="threat-item">
+                        <div class="threat-info">
+                            <strong>Trojan.Banker.exe</strong>
+                            <span class="level level-critical">Level: Kritis</span>
+                        </div>
+                        <select id="action-2">
+                            <option value="ignore">Abaikan</option>
+                            <option value="quarantine">Karantina</option>
+                            <option value="remove">Hapus</option>
+                        </select>
+                    </div>
+                    <div class="threat-item">
+                        <div class="threat-info">
+                            <strong>Spyware.Keylogger</strong>
+                            <span class="level level-critical">Level: Kritis</span>
+                        </div>
+                        <select id="action-3">
+                            <option value="ignore">Abaikan</option>
+                            <option value="quarantine">Karantina</option>
+                            <option value="remove">Hapus</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="btn-finish" class="btn-finish">Bersihkan Sistem</button>
+            </div>
+            
+        </div>
+        
+        <div class="back-link">
+            <a href="index.html">&larr; Kembali ke Dashboard</a>
+        </div>
+    </main>
+    
+    <div id="modal-sukses" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-aman">
+            <h2>SELAMAT! SISTEM BERSIH! ✅</h2>
+            <p>Anda telah berhasil mengkarantina/menghapus semua ancaman. Komputer Anda sekarang aman!</p>
+            <button class="modal-button" data-action="close-success">Kembali ke Dashboard</button>
+        </div>
+    </div>
+    
+    <div id="modal-gagal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-jebakan">
+            <h2>GAGAL! ⛔</h2>
+            <p>Anda memilih [Abaikan] untuk salah satu ancaman kritis! Virus itu masih aktif di sistem Anda. Coba pilih tindakan yang benar.</p>
+            <button class="modal-button" data-action="close-fail">Coba Lagi</button>
+        </div>
+    </div>
+
+    <script src="modul-9-script.js"></script>
+</body>
+</html>
