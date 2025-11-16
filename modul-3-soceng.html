@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 3: Simulator Social Engineering - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-3-style.css">
+</head>
+<body>
+    <header>
+        <h1>Modul 3: Simulator Social Engineering</h1>
+        <p>Anda menerima pesan dari nomor tak dikenal. Bisakah Anda membuat pilihan yang tepat?</p>
+    </header>
+
+    <main>
+        <div class="simulator-container">
+            <div class="chat-header">
+                <span class="back-arrow">&larr;</span>
+                <img src="https://i.imgur.com/wP3tA1s.png" alt="Profil" class="profile-pic">
+                <div class="chat-info">
+                    <strong>+62 812 XXXX XXXX</strong>
+                    <span>online</span>
+                </div>
+            </div>
+
+            <div id="chat-window" class="chat-window">
+                </div>
+
+            <div id="response-options" class="response-options">
+                </div>
+        </div>
+        
+        <div id="success-modal" class="modal-backdrop" style="display: none;">
+            <div class="modal-content">
+                <h2>Luar Biasa!</h2>
+                <p>Anda berhasil menghindari penipuan! Anda membuat semua pilihan yang tepat dan memblokir penipu. Kerja bagus!</p>
+                <a href="index.html" class="modal-button">Kembali ke Dashboard</a>
+            </div>
+        </div>
+
+        <div id="fail-modal" class="modal-backdrop" style="display: none;">
+            <div class="modal-content fail">
+                <h2>Oh, Tidak!</h2>
+                <p>Anda mengklik link berbahaya! Data Anda berisiko dicuri. Ingat, jangan pernah klik file .APK atau link aneh dari nomor tak dikenal.</p>
+                <button id="retry-btn" class="modal-button">Coba Lagi</button>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="modul-3-script.js"></script>
+</body>
+</html>
