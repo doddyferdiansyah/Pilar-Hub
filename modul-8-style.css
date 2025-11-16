@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* ---- Variabel Warna (Konsisten) ---- */
+:root {
+    --color-blue: #0D47A1;
+    --color-bg: #f0f2f5;
+    --color-aman: #28a745;
+    --color-jebakan: #dc3545;
+    --color-netral: #6c757d;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--color-blue);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 800px; /* Lebar halaman pengaturan */
+    padding: 20px;
+}
+
+/* ---- Score Bar ---- */
+.score-container {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.score-container strong {
+    font-size: 1.2rem;
+    color: var(--color-blue);
+}
+.score-bar-bg {
+    width: 100%;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+.score-bar {
+    height: 100%;
+    width: 20%; /* Mulai dari 20% */
+    background-color: var(--color-jebakan); /* Mulai dari merah */
+    border-radius: 10px;
+    transition: width 0.5s ease, background-color 0.5s ease;
+}
+#score-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-jebakan);
+    transition: color 0.5s ease;
+}
+
+/* ---- Halaman Pengaturan ---- */
+.settings-page {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+.setting-item:last-child {
+    border-bottom: none;
+}
+.setting-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+.setting-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ---- Kontrol Pengaturan (Dropdown) ---- */
+select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 2px solid;
+}
+
+/* ---- Kontrol Pengaturan (Toggle Switch) ---- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+/* Logika Warna (PENTING) */
+.setting-bad {
+    border-color: var(--color-jebakan);
+    color: var(--color-jebakan);
+}
+input.setting-bad + .slider {
+    background-color: var(--color-jebakan);
+}
+.setting-good {
+    border-color: var(--color-aman);
+    color: var(--color-aman);
+}
+input.setting-good + .slider {
+    background-color: var(--color-aman);
+}
+input:checked + .slider {
+    background-color: var(--color-aman); /* Default 'checked' adalah 'aman' untuk toggle */
+}
+input.setting-bad:checked + .slider {
+    background-color: var(--color-jebakan); /* Tapi jika 'bad', tetap 'jebakan' */
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* ---- Tombol Kembali ---- */
+.back-link { margin-top: 20px; text-align: center; }
+.back-link a { color: var(--color-blue); text-decoration: none; font-weight: 700; }
+
+/* ---- Pop-up Kemenangan ---- */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex; align-items: center; justify-content: center; z-index: 100;
+}
+.modal-content {
+    background-color: white; padding: 30px; border-radius: 8px;
+    text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 450px;
+}
+.modal-content h2 { color: var(--color-blue); }
+.modal-button {
+    background-color: var(--color-aman); color: white;
+    padding: 10px 20px; border: none; border-radius: 5px;
+    cursor: pointer; font-size: 1rem; margin-top: 10px;
+    text-decoration: none;
+}
