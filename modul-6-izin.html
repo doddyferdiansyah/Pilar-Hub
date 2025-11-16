@@ -7,83 +7,80 @@
     <link rel="stylesheet" href="modul-6-style.css">
 </head>
 <body>
+    <body>
     <header>
         <h1>Modul 6: Simulator Izin Aplikasi</h1>
         <p>Anda baru saja mengunduh 2 aplikasi. Mari kita lihat izin apa yang mereka minta.</p>
     </header>
 
     <main>
-        <div class="simulator-container">
-            <div class="phone-screen">
-                
-                <div id="screen-start" class="screen active">
-                    <div class="app-icon" id="app-senter">
-                        <span class="icon">💡</span>
-                        <span>Senter Super</span>
+        <div class="phone-frame">
+            <div class="phone-notch"></div> <div class="simulator-container">
+                <div class="phone-screen">
+                    
+                    <div id="screen-start" class="screen active">
+                        <div class="app-icon" id="app-senter">
+                            <span class="icon">💡</span>
+                            <span>Senter Super</span>
+                        </div>
+                        <div class="app-icon" id="app-game">
+                            <span class="icon">🐛</span>
+                            <span>Cacing Lucu</span>
+                        </div>
+                        <p class="instruction">Klik salah satu aplikasi untuk "menginstalnya". Mari kita mulai dengan <strong>Senter Super</strong>.</p>
                     </div>
-                    <div class="app-icon" id="app-game">
-                        <span class="icon">🐛</span>
-                        <span>Cacing Lucu</span>
-                    </div>
-                    <p class="instruction">Klik salah satu aplikasi untuk "menginstalnya". Mari kita mulai dengan <strong>Senter Super</strong>.</p>
-                </div>
 
-                <div id="screen-senter-1" class="screen">
-                    <div class="permission-popup">
-                        <span class="app-icon-small">💡</span>
-                        <strong>Izinkan "Senter Super" mengakses Kamera Anda?</strong>
-                        <p>Dibutuhkan untuk menyalakan lampu flash.</p>
-                        <div class="button-group">
-                            <button class="btn-deny">Tolak</button>
-                            <button class="btn-allow" data-next="screen-senter-2" data-feedback="wajar">Izinkan</button>
+                    <div id="screen-senter-1" class="screen">
+                        <div class="permission-popup">
+                            <span class="app-icon-small">💡</span>
+                            <strong>Izinkan "Senter Super" mengakses Kamera Anda?</strong>
+                            <p>Dibutuhkan untuk menyalakan lampu flash.</p>
+                            <div class="button-group">
+                                <button class="btn-deny">Tolak</button>
+                                <button class="btn-allow" data-next="screen-senter-2" data-feedback="wajar">Izinkan</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div id="screen-senter-2" class="screen">
-                    <div class="permission-popup">
-                        <span class="app-icon-small">💡</span>
-                        <strong>Izinkan "Senter Super" mengakses Kontak Anda?</strong>
-                        <p>Dibutuhkan untuk fitur "berbagi".</p>
-                        <div class="button-group">
-                            <button class="btn-deny" data-next="screen-senter-finish" data-feedback="menang">Tolak</button>
-                            <button class="btn-allow" data-next="screen-senter-finish" data-feedback="kalah">Izinkan</button>
+                    
+                    <div id="screen-senter-2" class="screen">
+                        <div class="permission-popup">
+                            <span class="app-icon-small">💡</span>
+                            <strong>Izinkan "Senter Super" mengakses Kontak Anda?</strong>
+                            <p>Dibutuhkan untuk fitur "berbagi".</p>
+                            <div class="button-group">
+                                <button class="btn-deny" data-next="screen-senter-finish" data-feedback="menang">Tolak</button>
+                                <button class="btn-allow" data-next="screen-senter-finish" data-feedback="kalah">Izinkan</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="screen-senter-finish" class="screen">
-                    <div class="feedback-box">
-                        <h2 id="feedback-title">Judul Feedback</h2>
-                        <p id="feedback-text">Teks feedback akan muncul di sini.</p>
-                        <button class="modal-button" id="btn-lanjut-game">Lanjut ke Aplikasi Game</button>
-                    </div>
-                </div>
-
-                <div id="screen-game-1" class="screen">
-                    <div class="permission-popup">
-                        <span class="app-icon-small">🐛</span>
-                        <strong>Izinkan "Cacing Lucu" mengakses Penyimpanan Anda?</strong>
-                        <p>Dibutuhkan untuk menyimpan progres game Anda.</p>
-                        <div class="button-group">
-                            <button class="btn-deny" data-next="screen-game-finish" data-feedback="wajar-tolak">Tolak</button>
-                            <button class="btn-allow" data-next="screen-game-finish" data-feedback="wajar-izin">Izinkan</button>
+                    <div id="screen-senter-finish" class="screen">
+                        <div class="feedback-box">
+                            <h2 id="feedback-title"></h2> <p id="feedback-text"></p> <button class="modal-button" id="btn-lanjut-game">Lanjut ke Aplikasi Game</button>
                         </div>
                     </div>
-                </div>
-                
-                <div id="screen-game-finish" class_name="screen">
-                    <div class="feedback-box">
-                        <h2 id="feedback-title-game">Judul Feedback</h2>
-                        <p id="feedback-text-game">Teks feedback akan muncul di sini.</p>
-                        <a href="index.html" class="modal-button">Selesai! Kembali ke Dashboard</a>
-                    </div>
-                </div>
 
+                    <div id="screen-game-1" class="screen">
+                        <div class="permission-popup">
+                            <span class="app-icon-small">🐛</span>
+                            <strong>Izinkan "Cacing Lucu" mengakses Penyimpanan Anda?</strong>
+                            <p>Dibutuhkan untuk menyimpan progres game Anda.</p>
+                            <div class="button-group">
+                                <button class="btn-deny" data-next="screen-game-finish" data-feedback="wajar-tolak">Tolak</button>
+                                <button class="btn-allow" data-next="screen-game-finish" data-feedback="wajar-izin">Izinkan</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="screen-game-finish" class="screen"> <div class="feedback-box">
+                            <h2 id="feedback-title-game"></h2> <p id="feedback-text-game"></p> <a href="index.html" class="modal-button">Selesai! Kembali ke Dashboard</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-
-    </main>
+            
+        </div> </main>
     
     <script src="modul-6-script.js"></script>
 </body>
