@@ -153,3 +153,43 @@ label {
     text-decoration: none;
     font-weight: 700;
 }
+
+/* --- Pop-up Kemenangan --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-width: 400px; /* Lebar modal */
+}
+
+.modal-content h2 {
+    color: var(--color-blue);
+    margin-top: 0;
+}
+
+.modal-content button {
+    background-color: var(--color-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
