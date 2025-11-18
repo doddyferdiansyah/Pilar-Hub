@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Cek apakah semua sudah ditemukan
             if (foundFlags.size === totalFlags) {
+                localStorage.setItem('pilar_completed_1', 'true');
                 // Tampilkan pop-up kemenangan
                 setTimeout(() => { // Kasih jeda dikit biar terasa
                     successModal.style.display = 'flex';
