@@ -232,6 +232,93 @@ footer {
 /* ---- Desain Sertifikat (Awalnya Sembunyi) ---- */
 .certificate-container { display: none; } /* Sembunyi di layar biasa */
 
+/* ---- Modal Untuk Klaim Sertifikat ---- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Latar belakang agak gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Pastikan modal selalu di atas */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%; /* Responsive */
+    animation: fadeIn 0.3s ease-out; /* Animasi muncul */
+}
+
+.modal-content h3 {
+    color: var(--color-blue);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.modal-content input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Pastikan padding di dalam width */
+    margin-bottom: 20px;
+}
+
+.modal-content input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.modal-button {
+    background-color: var(--color-blue);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s;
+    margin: 5px; /* Spasi antar tombol */
+}
+
+.modal-button:hover {
+    background-color: #0a3a80;
+}
+
+/* Tombol Batal/Tutup di modal */
+.modal-content button[data-action="close-modal"] {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-content button[data-action="close-modal"]:hover {
+    color: #333;
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* ---- MEDIA PRINT (Cetak PDF) ---- */
 @media print {
     /* Sembunyikan SEMUA elemen website kecuali sertifikat */
