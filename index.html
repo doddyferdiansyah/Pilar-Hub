@@ -10,6 +10,16 @@
     <header>
         <h1>Pilar Education Hub</h1>
         <p>Laboratorium Simulasi Cybersecurity Praktis & Gratis</p>
+        <div class="progress-container">
+        <div class="progress-info">
+            <span>Progres Belajar Anda: <strong id="progress-text">0%</strong></span>
+            <span id="progress-fraction">0/10 Selesai</span>
+        </div>
+        <div class="progress-bar-bg">
+            <div id="main-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+        </div>
+        <button id="btn-reset-progress" style="margin-top:10px; font-size:0.8rem; cursor:pointer;">Reset Progres</button>
+        </div>
     </header>
 
     <main>
@@ -19,70 +29,70 @@
             
             <div class="module-grid">
 
-                <a href="modul-1-phishing.html" class="module-card">
+                <a href="modul-1-phishing.html" class="module-card" id="modul-1">
                     <div class="module-icon">📧</div>
                     <h3>Modul 1: Simulator Phishing</h3>
                     <p class="module-description">Belajar mengenali email penipuan di kotak masuk Anda.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-2-password.html" class="module-card">
+                <a href="modul-2-password.html" class="module-card" id="modul-2">
                     <div class="module-icon">🔑</div>
                     <h3>Modul 2: Simulator Keamanan Password</h3>
                     <p class="module-description">Menguji dan membuat password yang tidak bisa dibobol.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-3-soceng.html" class="module-card">
+                <a href="modul-3-soceng.html" class="module-card" id="modul-3">
                     <div class="module-icon">💬</div>
                     <h3>Modul 3: Simulator Social Engineering</h3>
                     <p class="module-description">Mengenali jebakan di chat WA dan media sosial.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-4-wifi.html" class="module-card">
+                <a href="modul-4-wifi.html" class="module-card" id="modul-4">
                     <div class="module-icon">📶</div>
                     <h3>Modul 4: Simulator Keamanan Wi-Fi</h3>
                     <p class="module-description">Belajar mengenali jebakan Wi-Fi gratis di tempat umum.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-5-url.html" class="module-card">
+                <a href="modul-5-url.html" class="module-card" id="modul-5">
                     <div class="module-icon">🌐</div>
                     <h3>Modul 5: Simulator Analisis URL</h3>
                     <p class="module-description">Belajar mendeteksi website palsu (phishing) dari URL-nya.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-6-izin.html" class="module-card">
+                <a href="modul-6-izin.html" class="module-card" id="modul-6">
                     <div class="module-icon">📱</div>
                     <h3>Modul 6: Simulator Izin Aplikasi</h3>
                     <p class="module-description">Belajar mengenali izin aplikasi (permission) yang berbahaya.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-7-download.html" class="module-card">
+                <a href="modul-7-download.html" class="module-card" id="modul-7">
                     <div class="module-icon">📥</div>
                     <h3>Modul 7: Simulator Jebakan Download</h3>
                     <p class="module-description">Belajar melewati jebakan iklan & tombol download palsu.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-8-privasi.html" class="module-card">
+                <a href="modul-8-privasi.html" class="module-card" id="modul-8">
                     <div class="module-icon">🛡️</div>
                     <h3>Modul 8: Simulator Audit Privasi</h3>
                     <p class="module-description">Mengamankan akun media sosial Anda dari pengaturan default.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-9-antivirus.html" class="module-card">
+                <a href="modul-9-antivirus.html" class="module-card" id="modul-9">
                     <div class="module-icon">🦠</div>
                     <h3>Modul 9: Simulator Antivirus</h3>
                     <p class="module-description">Belajar mendeteksi & membersihkan malware dari sistem.</p>
                     <span class="module-status active">Mulai Belajar</span>
                 </a>
 
-                <a href="modul-10-ransomware.html" class="module-card">
+                <a href="modul-10-ransomware.html" class="module-card" id="modul-10">
                     <div class="module-icon">🔒</div>
                     <h3>Modul 10: Ransomware & Backup</h3>
                     <p class="module-description">Melawan musuh terburuk: data terkunci, selamatkan dengan backup!</p>
@@ -97,5 +107,6 @@
     <footer>
         <p>&copy; 2025 Pilar Education Hub - Didukung oleh Pilar Solusi Informatika</p>
     </footer>
+    <script src="dashboard-script.js"></script>
 </body>
 </html>
