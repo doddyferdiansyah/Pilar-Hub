@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentScore === 100) {
             scoreText.innerText = "100/100 (Sangat Aman!)";
             setTimeout(() => {
+                localStorage.setItem('pilar_completed_8', 'true');
                 successModal.style.display = 'flex';
             }, 500); // Tampilkan modal kemenangan
         }
