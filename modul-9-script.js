@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Jika Adware (action1) diabaikan, kita anggap tetap "sukses"
             // tapi idealnya semua harus ditangani.
             // Untuk 'game' ini, kita fokus ke yang kritis.
-            localStorage.setItem('pilar_completed_3', 'true');
+            localStorage.setItem('pilar_completed_9', 'true');
             modalSukses.style.display = 'flex'; // Tampilkan modal Sukses
         }
     });
