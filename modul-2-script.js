@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Cek jika password SANGAT KUAT (skor 5) dan modal BELUM muncul
         if (result.score === 5 && !modalShown) {
             successModal.style.display = 'flex'; // Tampilkan modal
+            localStorage.setItem('pilar_completed_1', 'true');
             modalShown = true; // Set status jadi sudah muncul
         }
         
