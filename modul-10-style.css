@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Share+Tech+Mono&display=swap');
+
+/* ---- Variabel Warna (Konsisten) ---- */
+:root {
+    --color-blue: #0D47A1;
+    --color-bg: #f0f2f5;
+    --color-aman: #28a745;
+    --color-jebakan: #dc3545;
+    --color-ransomware-bg: #8b0000; /* Dark Red */
+    --color-ransomware-text: #fff;
+    --color-button-pay: #e74c3c;
+    --color-button-backup: #2ecc71;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* Pastikan tidak ada scroll */
+}
+
+/* ---- Layar Umum (Screen) ---- */
+.screen {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.screen.active {
+    display: flex;
+    opacity: 1;
+    z-index: 10;
+}
+
+/* ---- Layar Ransomware ---- */
+#ransomware-screen {
+    background-color: var(--color-ransomware-bg); /* Latar belakang merah */
+    color: var(--color-ransomware-text);
+    font-family: 'Share Tech Mono', monospace; /* Font ala komputer */
+}
+.ransomware-alert {
+    text-align: center;
+    padding: 30px;
+    max-width: 600px;
+    border: 3px solid var(--color-ransomware-text);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.4); /* Background semi-transparan */
+}
+.ransomware-alert h1 {
+    font-size: 2.5rem;
+    color: #ffd700; /* Gold */
+    margin-bottom: 20px;
+}
+.ransomware-alert p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.ransomware-alert strong {
+    color: #00ff00; /* Neon Green */
+}
+.timer {
+    font-size: 1.8rem;
+    margin: 20px 0;
+    color: #ff0000; /* Merah menyala */
+    font-weight: 700;
+}
+#countdown {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #00ff00;
+}
+.ransomware-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.btn-action {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn-pay {
+    background-color: var(--color-button-pay);
+    color: white;
+}
+.btn-pay:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+.btn-backup {
+    background-color: var(--color-button-backup);
+    color: white;
+}
+.btn-backup:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+.warning {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* ---- Layar Backup ---- */
+#backup-screen {
+    background-color: var(--color-bg);
+}
+.backup-restore {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+}
+.backup-restore h1 {
+    color: var(--color-blue);
+    margin-bottom: 15px;
+}
+.backup-restore p {
+    color: #555;
+    margin-bottom: 25px;
+}
+.backup-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.backup-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+.backup-item:hover {
+    background-color: #f8f8f8;
+    border-color: var(--color-blue);
+}
+.backup-item.selected {
+    border-color: var(--color-blue);
+    background-color: #e6f0ff;
+}
+.backup-item .date {
+    font-weight: 700;
+    color: #333;
+}
+.backup-item .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.status-bad { background-color: var(--color-jebakan); color: white; }
+.status-good { background-color: var(--color-aman); color: white; }
+.restore-info {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* ---- Modals (Feedback) ---- */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex; justify-content: center; align-items: center; z-index: 100;
+}
+.modal-content {
+    background-color: white; padding: 30px; border-radius: 8px;
+    text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    max-width: 450px;
+    border-top: 5px solid;
+}
+.modal-fail { border-color: var(--color-jebakan); }
+.modal-fail h2 { color: var(--color-jebakan); }
+.modal-success { border-color: var(--color-aman); }
+.modal-success h2 { color: var(--color-aman); }
+.modal-content h2 { margin-top: 0; font-size: 1.8rem; }
+.modal-content p { font-size: 1.1rem; line-height: 1.5; }
+.modal-button {
+    background-color: var(--color-blue); color: white;
+    padding: 12px 25px; border: none; border-radius: 5px;
+    cursor: pointer; font-size: 1rem; margin-top: 20px;
+    transition: background-color 0.2s;
+}
+.modal-button:hover { background-color: #0a3a80; }
+.btn-retry { background-color: var(--color-jebakan); }
+.btn-retry:hover { background-color: #c0392b; }
+.btn-back-dashboard { background-color: var(--color-aman); }
+.btn-back-dashboard:hover { background-color: #27ae60; }
