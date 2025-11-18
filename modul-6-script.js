@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     feedbackTitleGame.innerText = data.title;
                     feedbackTextGame.innerText = data.text;
                     feedbackTitleGame.className = data.class;
+                    localStorage.setItem('pilar_completed_6', 'true');
                 }
             }
 
