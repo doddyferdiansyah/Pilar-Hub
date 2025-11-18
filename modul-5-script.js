@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (foundFlags.size === totalFlags) {
                 // Tampilkan pop-up kemenangan
                 setTimeout(() => { // Kasih jeda dikit biar terasa
+                    localStorage.setItem('pilar_completed_5', 'true');
                     successModal.style.display = 'flex';
                 }, 500);
             }
