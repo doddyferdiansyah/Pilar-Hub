@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             next: 'showFailModal'
         },
         showWinModal: {
+            localStorage.setItem('pilar_completed_3', 'true');
             action: () => { successModal.style.display = 'flex'; }
         },
         showFailModal: {
