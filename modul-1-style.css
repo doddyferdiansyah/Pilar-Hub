@@ -211,3 +211,79 @@ footer {
 .module-card.completed .module-status::before {
     content: "Tuntas! "; /* Teks tambahan */
 }
+
+/* ---- Bagian Klaim Sertifikat (Di Dashboard) ---- */
+.hidden-section { display: none; margin: 40px 0; text-align: center; }
+.congrats-box {
+    background: linear-gradient(135deg, #fff3cd, #ffecb3);
+    padding: 30px; border-radius: 15px;
+    border: 2px solid #ffc107; display: inline-block;
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.3);
+}
+.btn-gold {
+    background: linear-gradient(to bottom, #ffd700, #ffb900);
+    color: #333; font-weight: bold; font-size: 1.2rem;
+    padding: 15px 30px; border: none; border-radius: 50px;
+    cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.btn-gold:hover { transform: scale(1.05); }
+
+/* ---- Desain Sertifikat (Awalnya Sembunyi) ---- */
+.certificate-container { display: none; } /* Sembunyi di layar biasa */
+
+/* ---- MEDIA PRINT (Cetak PDF) ---- */
+@media print {
+    /* Sembunyikan SEMUA elemen website kecuali sertifikat */
+    body * { visibility: hidden; }
+    
+    /* Tampilkan Sertifikat */
+    #printable-certificate, #printable-certificate * {
+        visibility: visible;
+    }
+    
+    /* Atur posisi sertifikat memenuhi kertas */
+    #printable-certificate {
+        position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+        display: flex; align-items: center; justify-content: center;
+        background-color: white;
+    }
+    
+    /* Gaya Sertifikat */
+    .cert-border {
+        width: 900px; height: 600px; padding: 20px;
+        border: 10px solid #0D47A1; /* Bingkai Biru */
+        position: relative;
+    }
+    .cert-content {
+        width: 100%; height: 100%;
+        border: 2px solid #d4af37; /* Bingkai Emas Dalam */
+        padding: 40px; text-align: center;
+        box-sizing: border-box;
+        display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .cert-header h1 {
+        font-family: 'Times New Roman', serif; color: #0D47A1;
+        font-size: 3rem; margin: 0;
+    }
+    .cert-body h2 {
+        font-family: 'Great Vibes', cursive, 'Times New Roman', serif; /* Font sambung jika ada */
+        font-size: 3.5rem; color: #d4af37; margin: 10px 0;
+        border-bottom: 1px solid #eee; display: inline-block; padding: 0 20px;
+    }
+    .cert-footer {
+        display: flex; justify-content: space-between; align-items: center;
+        margin-top: 20px;
+    }
+    .sign-line { width: 200px; height: 2px; background: #333; margin: 5px auto; }
+    .cert-seal {
+        font-size: 4rem; color: #d4af37; border: 3px solid #d4af37;
+        border-radius: 50%; width: 120px; height: 120px;
+        display: flex; align-items: center; justify-content: center;
+        transform: rotate(-15deg); font-weight: bold; font-size: 1rem;
+    }
+    .cert-disclaimer {
+        font-size: 0.6rem; color: #999; margin-top: 10px;
+        font-style: italic;
+    }
+}
