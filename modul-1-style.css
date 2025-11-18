@@ -336,6 +336,11 @@ footer {
         display: none !important;
     }
 
+    /* Tampilkan Sertifikat & Paksa Muncul */
+    #printable-certificate, #printable-certificate * {
+        visibility: visible;
+    }
+
     /* 3. Tampilkan Sertifikat */
     #printable-certificate {
         display: flex !important; /* Munculkan! */
