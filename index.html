@@ -107,6 +107,63 @@
     <footer>
         <p>&copy; 2025 Pilar Education Hub - Didukung oleh Pilar Solusi Informatika</p>
     </footer>
+    <div id="certificate-section" class="hidden-section">
+        <div class="congrats-box">
+            <h2>🎉 LUAR BIASA! 🎉</h2>
+            <p>Anda telah menyelesaikan 100% materi Detektif Digital.</p>
+            <button id="btn-claim-cert" class="btn-gold">🏆 Klaim Sertifikat Kelulusan</button>
+        </div>
+    </div>
+
+    <div id="cert-modal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h3>Siapkan Sertifikat Anda</h3>
+            <p>Masukkan nama lengkap yang ingin dicantumkan:</p>
+            <input type="text" id="cert-name-input" placeholder="Nama Lengkap Anda" style="width: 80%; padding: 10px; margin: 10px 0;">
+            <button id="btn-generate-cert" class="modal-button">Cetak Sertifikat</button>
+            <button id="btn-close-cert-modal" style="background:none; border:none; color: #555; margin-top:10px; cursor:pointer;">Batal</button>
+        </div>
+    </div>
+
+    <div id="printable-certificate" class="certificate-container">
+        <div class="cert-border">
+            <div class="cert-content">
+                <div class="cert-header">
+                    <h1>PILAR EDUCATION HUB</h1>
+                    <p>Cyber Security Awareness Initiative</p>
+                </div>
+                
+                <div class="cert-body">
+                    <p class="cert-subtitle">Sertifikat Penyelesaian Diberikan Kepada:</p>
+                    <h2 id="cert-student-name">Nama Peserta</h2>
+                    <p class="cert-text">
+                        Telah berhasil menyelesaikan kurikulum simulasi <strong>"Detektif Digital"</strong><br>
+                        dan menunjukkan kompetensi dasar dalam Kesadaran Keamanan Siber.
+                    </p>
+                </div>
+
+                <div class="cert-footer">
+                    <div class="cert-sign">
+                        <p id="cert-date">18 November 2024</p>
+                        <div class="sign-line"></div>
+                        <p>Tanggal</p>
+                    </div>
+                    <div class="cert-seal">
+                        🏅<br>VERIFIED
+                    </div>
+                    <div class="cert-sign">
+                        <p class="sign-name">Doddy Ferdiansyah</p>
+                        <div class="sign-line"></div>
+                        <p>Founder Pilar Hub</p>
+                    </div>
+                </div>
+
+                <div class="cert-disclaimer">
+                    <p>*Sertifikat ini merupakan apresiasi penyelesaian modul edukasi mandiri. Dokumen ini bukan sertifikasi profesi resmi dan tidak dapat digunakan untuk kepentingan hukum atau melamar pekerjaan formal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="dashboard-script.js"></script>
 </body>
 </html>
