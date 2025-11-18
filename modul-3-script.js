@@ -86,9 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
             delay: 1000,
             next: 'showFailModal'
         },
-        showWinModal: {
-            localStorage.setItem('pilar_completed_3', 'true');
-            action: () => { successModal.style.display = 'flex'; }
+        showWinModal: {       
+            action: () => { 
+                localStorage.setItem('pilar_completed_3', 'true');
+                successModal.style.display = 'flex'; }
         },
         showFailModal: {
             action: () => { failModal.style.display = 'flex'; }
