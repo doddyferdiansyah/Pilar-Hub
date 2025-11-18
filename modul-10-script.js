@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalInfectedBackup.style.display = 'flex';
             } else {
                 // Pilihan benar (kemarin atau minggu lalu)
-                localStorage.setItem('pilar_completed_1', 'true');
+                localStorage.setItem('pilar_completed_10', 'true');
                 modalSuccess.style.display = 'flex';
             }
         });
