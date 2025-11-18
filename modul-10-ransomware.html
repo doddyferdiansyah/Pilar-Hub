@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 10: Simulator Ransomware - Pilar Education Hub</title>
+    <link rel="stylesheet" href="modul-10-style.css">
+</head>
+<body>
+    <div id="ransomware-screen" class="screen active">
+        <div class="ransomware-alert">
+            <h1>OOPS, FILE ANDA DIENKRIPSI!</h1>
+            <p>Data penting Anda, foto, video, dokumen, semua sudah dienkripsi.</p>
+            <p>Untuk memulihkannya, Anda harus membayar tebusan sebesar <strong>$500 USD</strong>.</p>
+            <div class="timer">
+                <span>Waktu tersisa:</span> <span id="countdown">23:59:59</span>
+            </div>
+            <div class="ransomware-buttons">
+                <button id="btn-pay" class="btn-action btn-pay">BAYAR TEBUSAN SEKARANG</button>
+                <button id="btn-backup" class="btn-action btn-backup">PULIHKAN DARI BACKUP</button>
+            </div>
+            <p class="warning">Jika tidak dibayar, data akan hilang selamanya!</p>
+        </div>
+    </div>
+
+    <div id="backup-screen" class="screen">
+        <div class="backup-restore">
+            <h1>Pilih Titik Pemulihan (Restore Point)</h1>
+            <p>Anda memutuskan untuk memulihkan data dari backup. Pilih backup yang Anda yakini bersih.</p>
+            <div class="backup-options">
+                <div class="backup-item" data-date="today">
+                    <span class="date">17 November 2024 (Hari Ini)</span>
+                    <span class="status status-bad">TERINFEKSI ⚠️</span>
+                </div>
+                <div class="backup-item" data-date="yesterday">
+                    <span class="date">16 November 2024 (Kemarin)</span>
+                    <span class="status status-good">AMAN ✅</span>
+                </div>
+                <div class="backup-item" data-date="lastweek">
+                    <span class="date">10 November 2024 (Minggu Lalu)</span>
+                    <span class="status status-good">AMAN ✅</span>
+                </div>
+            </div>
+            <p class="restore-info">Pilih backup yang paling baru dan **bersih** untuk menghindari kehilangan data.</p>
+        </div>
+    </div>
+
+    <div id="modal-pay-fail" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-fail">
+            <h2>⛔ JANGAN DIBAYAR!</h2>
+            <p>Membayar tebusan TIDAK menjamin data Anda kembali. Anda hanya mendanai kriminal. Ini adalah kerugian ganda!</p>
+            <button class="modal-button btn-retry" data-action="retry-ransom">Coba Lagi</button>
+        </div>
+    </div>
+
+    <div id="modal-infected-backup" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-fail">
+            <h2>⚠️ BACKUP TERINFEKSI!</h2>
+            <p>Anda memilih backup yang sudah terinfeksi. Data Anda masih terkunci. Pilih backup yang lebih lama dan aman.</p>
+            <button class="modal-button btn-retry" data-action="retry-backup">Coba Lagi</button>
+        </div>
+    </div>
+
+    <div id="modal-success" class="modal-backdrop" style="display: none;">
+        <div class="modal-content modal-success">
+            <h2>✅ SELAMAT! DATA PULIH 100%!</h2>
+            <p>Anda berhasil memulihkan semua data dari backup yang aman. Tidak perlu bayar sepeser pun!</p>
+            <button class="modal-button btn-back-dashboard" data-action="dashboard">Kembali ke Dashboard</button>
+        </div>
+    </div>
+
+    <script src="modul-10-script.js"></script>
+</body>
+</html>
