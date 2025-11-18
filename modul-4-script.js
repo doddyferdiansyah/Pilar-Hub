@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Tambahkan 'listener' ke setiap pilihan Wi-Fi
     
     wifiAman.addEventListener('click', () => {
-        localStorage.setItem('pilar_completed_3', 'true');
+        localStorage.setItem('pilar_completed_4', 'true');
         modalAman.style.display = 'flex';
     });
 
