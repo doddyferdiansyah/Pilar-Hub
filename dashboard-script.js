@@ -2,24 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalModules = 10;
     let completedCount = 0;
 
-    // 1. Loop untuk mengecek setiap modul
+    // 1. Loop Cek Progres
     for (let i = 1; i <= totalModules; i++) {
         const moduleId = `modul-${i}`;
-        const storageKey = `pilar_completed_${i}`; // Kunci memori: pilar_completed_1, dst.
+        const storageKey = `pilar_completed_${i}`;
         
-        // Cek apakah ada data 'true' di memori browser
-        const isCompleted = localStorage.getItem(storageKey) === 'true';
-
-        if (isCompleted) {
+        if (localStorage.getItem(storageKey) === 'true') {
             completedCount++;
-            
-            // Cari elemen kartu di HTML
             const cardElement = document.getElementById(moduleId);
             if (cardElement) {
-                // Tambahkan kelas CSS 'completed' (jadi hijau)
                 cardElement.classList.add('completed');
-                
-                // Ubah teks tombol (opsional, karena CSS sudah menangani)
                 const statusSpan = cardElement.querySelector('.module-status');
                 if(statusSpan) statusSpan.innerText = "Selesai";
             }
@@ -32,11 +24,59 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('progress-fraction').innerText = `${completedCount}/${totalModules} Selesai`;
     document.getElementById('main-progress-bar').style.width = `${percentage}%`;
 
-    // 3. Tombol Reset (Untuk Testing)
-    document.getElementById('btn-reset-progress').addEventListener('click', () => {
+    // 3. LOGIKA BARU: Cek Sertifikat (Jika 100%)
+    if (percentage === 100) {
+        const certSection = document.getElementById('certificate-section');
+        if (certSection) certSection.style.display = 'block'; // Tampilkan tombol klaim
+    }
+
+    // 4. Logika Modal & Print Sertifikat
+    const btnClaim = document.getElementById('btn-claim-cert');
+    const modal = document.getElementById('cert-modal');
+    const btnGenerate = document.getElementById('btn-generate-cert');
+    const btnClose = document.getElementById('btn-close-cert-modal');
+
+    if (btnClaim) {
+        btnClaim.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+    }
+
+    if (btnClose) {
+        btnClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    if (btnGenerate) {
+        btnGenerate.addEventListener('click', () => {
+            const nameInput = document.getElementById('cert-name-input').value;
+            if (nameInput.trim() === "") {
+                alert("Mohon isi nama Anda.");
+                return;
+            }
+
+            // Isi Data ke Sertifikat
+            document.getElementById('cert-student-name').innerText = nameInput;
+            
+            // Isi Tanggal Hari Ini
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('cert-date').innerText = today.toLocaleDateString('id-ID', options);
+
+            // Print!
+            window.print();
+            
+            // Tutup modal setelah print dialog muncul
+            modal.style.display = 'none';
+        });
+    }
+
+    // ... (Kode Reset Button tetap ada di bawah sini) ...
+     document.getElementById('btn-reset-progress').addEventListener('click', () => {
         if(confirm("Reset semua progres belajar Anda?")) {
-            localStorage.clear(); // Hapus memori
-            location.reload(); // Refresh halaman
+            localStorage.clear();
+            location.reload();
         }
     });
 });
