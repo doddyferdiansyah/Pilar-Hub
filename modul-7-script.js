@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Listener untuk Tombol BENAR ---
     tombolBenar.addEventListener('click', (e) => {
         e.preventDefault(); // Mencegah link pindah halaman
+        localStorage.setItem('pilar_completed_7', 'true');
         modalSukses.style.display = 'flex';
     });
 
