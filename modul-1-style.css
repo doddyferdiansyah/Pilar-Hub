@@ -335,10 +335,6 @@ footer {
     body > *:not(#printable-certificate) {
         display: none !important;
     }
-     
-  /*  #printable-certificate, #printable-certificate * {
-        visibility: visible; /* Tampilkan sertifikat */
-    } */
 
     /* 3. Tampilkan Sertifikat */
     #printable-certificate {
